@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="myEvent('page is loaded')">
+    
+
+
+
+
+
+
+
+    <button onclick="objAlert()" class="btn btn-primary" type="button">alert</button><br>
+    <button onclick="objConfirm()" class="btn btn-primary" type="button">confirm</button><br>
+    <button onclick="objPrompt()" class="btn btn-primary" type="button">prompt</button><br>
+    <button onclick="objOpen()" class="btn btn-primary" type="button">open</button><br>
+    <button onclick="objClose()" class="btn btn-primary" type="button">close</button><br>
+
+    <button onclick="myEvent('this button is clicked')">onclick</button><br>
+    <button onmouseover="myEvent('on mouse over')"> mouse over</button><br>
+    <button onmouseout="myEvent('on mouse out')">mouse out</button><br>
+    <input onchange="myEvent('on change')" type="text"><br>
+    <input onkeydown="myEvent('on keydown')" type="text"><br>
+    <input onkeyup="myEvent('key up')" type="text"><br>
+
+    <h1 id="Id" name="Name" class="Class"> </h1><br>
+    <p></p>
+    <button onclick="demo()">click</button><br>
+
+    <script>
+
+            function demo(){
+                // var info=document.cookie;
+                // var info=document.domain;
+                // var info=document.lastModified;
+                // var info=document.title;
+                // var info=document.URL;
+                // document.getElementsByTagName("p")[0].innerHTML=info;
+
+                // document.open('text/html','replace');
+                // document.write("<h2>MINHAZ</h2>");
+                // document.close();
+
+                // var w=window.open();
+                // w.document.open();
+                // w.document.write("MINHAZ");
+                // w.document.close();
+
+                var element=document.getElementsByTagName("button");
+                var cnt=element.length;
+                alert(cnt);
+
+            }
+
+
+
+    
+            // var element=document.getElementById("Id");
+            // element.innerHTML="ASIF";
+
+            // var element=document.getElementsByClassName("Class");
+            // element[0].innerHTML="ASIF";
+
+            // var element=document.getElementsByName("Name");
+            // element[0].innerHTML="ASIF";
+
+            var element=document.getElementsByTagName("h1");
+            element[0].innerHTML="ASIF";
+
+
+
+        function objAlert(){
+            alert("successfully saved");
+        }
+
+        function objConfirm(){
+            var result=confirm("Do you want to delete?");
+            document.write(result);
+        }
+
+        function objPrompt(){
+            var result=prompt("write your name:");
+            document.write(result);
+
+        }
+
+        function objOpen(){
+            open();
+        }
+
+        function objClose(){
+            close();
+        }
+
+        // setTimeout(function(){
+        //     alert("after 2 sec")
+        // },2000000); //2000ms
+        
+
+        var appCodeName=navigator.appCodeName;
+        var appName=navigator.appName;
+        var appVersion=navigator.appVersion;
+        var cookieEnabled=navigator.cookieEnabled;
+        var language=navigator.language;
+        var userAgent=navigator.userAgent;
+        var platform=navigator.platform;
+
+        document.write(appCodeName+"<br>");
+        document.write(appName+"<br>");
+        document.write(appVersion+"<br>");
+        document.write(cookieEnabled+"<br>");
+        document.write(language+"<br>");
+        document.write(userAgent+"<br>");
+        document.write(platform+"<br>");
+
+        // navigator.geolocation.getCurrentPosition(function(position){
+        //     let altitude = position.coords.altitude;
+        //     let latitude = position.coords.latitude;
+        //     let longitude = position.coords.longitude;
+        //     let speed = position.coords.speed;
+
+
+        //     document.write(altitude+"<br>");
+        //     document.write(latitude+"<br>");
+        //     document.write(longitude+"<br>");
+        //     document.write(speed+"<br>");
+
+
+        // });
+
+
+            function myEvent(msg){
+                console.log(msg);
+            }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

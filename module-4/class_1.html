@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // variables
+        var x=10;
+        var y=20;
+        z=x+y;
+        document.write(z);
+        document.write(" ");
+
+        // non-primitive datatype
+        //object
+        var me={
+            name:"Asif",
+            age:26,
+            city:"Chittagong"
+        }
+        document.write(me.age);
+        document.write(" ");
+
+        //array
+        var city=["dhaka","Chittagong","sylhet"];
+        document.write(city);
+        document.write("<br>");
+        //operator
+
+        //if-else
+        var age=10;
+        if(age>=18){
+            document.write("You are adult.");
+            document.write("<br>");
+        }
+        else{
+            document.write("You are under 18");
+            document.write("<br>");
+        }
+
+        var live="Dhaka";
+        var studyPlace="Dhaka";
+        if(live=="Dhaka" && studyPlace=="Dhaka"){
+            document.write("You are in dhaka.");
+            document.write("<br>");
+        }
+        else{
+            document.write("You are not in Dhaka");
+            document.write("<br>");
+        }
+
+        var marks=50;
+
+        if(marks>=80) {
+            document.write("A+");
+        }
+        else if(marks>=70){
+            document.write("A");
+        }
+        else if(marks>=60){
+            document.write("A-");
+        }
+        else if(marks>=50){
+            document.write("B");
+        }
+        else if(marks>=40){
+            document.write("C");
+        }
+        else{
+            document.write("F");
+        }
+        document.write("<br>");
+
+        //switch case
+
+        marks=65;
+
+        switch(true){
+            case(marks>=80):
+                document.write("A+");
+                break;
+
+            case(marks>=70):
+                document.write("A");
+                break;
+
+            case(marks>=60):
+                document.write("A-");
+                break;
+
+            case(marks>=50):
+                document.write("B");
+                break;
+
+            case(marks>=40):
+                document.write("C");
+                break;
+
+            default:
+                document.write("F");
+        }
+        document.write("<br>");
+
+        //loop:for
+
+        for(var i=1;i<=5;i++){
+            document.write(i + "<br>");
+        }
+
+        for(var i=1;i<=10;i++){
+            if(i==4) continue;
+            else if(i==8) break;
+            else document.write(i + "<br>");
+        }
+        document.write("<br> <br>");
+
+        //loop:while
+        i=1;
+        while(i<=5){
+            document.write("<button>while loop</button> <br>");
+            i++;
+        }
+        document.write("<br> <br>");
+
+        //loop:do while
+        i=1;
+        do{
+            document.write("<button>do-while</button> <br>");
+            i=i+1;
+        }while(i<=5);
+        document.write("<br> <br>");
+
+        //function:without parameter
+
+        function addition(){
+            var num1=20;
+            var num2=40;
+            var num3=num1+num2;
+            document.write(num3 + "<br>");
+        }
+        addition();
+        addition();
+        addition();
+        addition();
+        document.write("<br> <br>");
+
+        //function:with parameter
+        function additionParameter(num1,num2){
+            var num3=num1+num2;
+            document.write(num3 + "<br>");
+        }
+        additionParameter();
+        additionParameter(11,12);
+        additionParameter(12,13);
+        additionParameter(14,16);
+        document.write("<br> <br>");
+
+        //function:with parameter
+        function additionReturn(num1,num2){
+            var num3=num1+num2;
+            return num3;
+        }
+        var result=additionReturn(144,16);
+        document.write(result);
+        document.write("<br> <br>");
+
+        // object
+
+        var human={
+            name:"Asif",
+            head:true,
+            hand:2,
+            leg:2,
+            eye:2
+        }
+
+        document.write(human.name + "<br>");
+        document.write(human["leg"]);
+        document.write("<br> <br>");
+
+        //array
+
+        var city=["Dhaka", "Chittagong", "Sylhet", "Rajshahi"];
+
+        document.write(city,"<br>");
+        document.write(city[1],"<br>");
+        document.write("<br>");
+
+        for(i=0;i<city.length;i++){
+            document.write(city[i],"<br>");
+        }
+        document.write("<br>");
+
+        // for in loop:array
+        for(var item in city) {
+            document.write(city[item] + " ");
+        }
+        document.write("<br> <br>");
+
+        //for in loop:object
+
+        var person={
+            name:"Asif",
+            age:23,
+            study:"IIT-JU",
+        }
+
+        for(var item in person){
+            document.write(item,": ",person[item],"<br>");
+        }
+        document.write("<br> <br>");
+
+        //array function
+        //concatanation
+
+        var arr1="a, b, c, d";
+        var arr2="e,f,g,h";
+        arr3=arr1.concat(arr2);
+        document.write(arr3);
+        document.write("<br> <br>");
+        // form
+        var name="Minhaz Hossain Asif";
+        var nameArray=Array.from(name);
+        document.write(nameArray);
+        document.write("<br> <br>");
+
+        //filter
+
+        var num=[3, 4 , 5, 3 ,7 , 1, 6 , 8, 9,1];
+        var filterArray=num.filter(function(item){
+            return item>5;
+        });
+        document.write(filterArray);
+        document.write("<br> <br>");
+
+        // find
+        var num=[4,5,6,7,8,1,2,3,4,5,6,7,8,9];
+        var result=num.find(function(item){
+            return item>7;
+        });
+        document.write(result,"<br>");
+
+        result=num.findIndex(function(item){
+            return item<5;
+        });
+        document.write(result);
+        document.write("<br> <br>");
+
+        //for each
+
+        num.forEach(function(item){
+            document.write(item,"<br>");
+        })
+        document.write("<br> <br>");
+
+        // includes/indexOf/push/pop/sort/reverse/slice/splice
+        var num=[4,5,6,7,8,1,2,3,4,5,6,7,8,9];
+
+        document.write(num,"<br>");
+        num.push(100);
+        num.push(102);
+        document.write(num,"<br>");
+        num.pop();
+        document.write(num,"<br>");
+        num.sort().reverse();
+        document.write(num,"<br>");
+        document.write(num.includes(5),"<br>");
+        document.write(num.includes(105),"<br>");
+        document.write(num.indexOf(5),"<br>");
+        document.write(num.indexOf(105),"<br>");
+
+        result=num.slice(1,4);
+        document.write(result,"<br>");
+        num.splice(1,2,3);
+        document.write(num,"<br>");
+        num.splice(0,0,1001);
+        document.write(num,"<br>");
+        document.write("<br> <br>");
+
+        //string:concat/charAt/indexOf/lastIndexOf/replace/substring/substr/slice/toLowercase/touppercase/trim
+
+        var fName="Minhaz Hossain ";
+        var lName="Asif";
+
+        var name=fName.concat(lName);
+        document.write(name,"<br>");
+        document.write(
+            name.charAt(0),"<br>"
+        );
+        document.write(
+            name.indexOf("h"),"<br>"
+        );
+
+        document.write(name.lastIndexOf("s"),"<br>");
+
+        document.write(
+            name.replace("H","h"),"<br>"
+        );
+        var s=name.substr(1,4);
+        document.write(s,"<br>");
+        var s=name.substring(1,4);
+        document.write(s,"<br>");
+
+        var s=name.slice(1,4);
+        document.write(s,"<br>");
+        
+        var s=name.toUpperCase();
+        document.write(s,"<br>");
+
+        var s=name.toLowerCase();
+        document.write(s,"<br>");
+
+        name="    A    ";
+        var s=name.trim();
+        document.write(name.length,"<br>");
+        document.write(s.length,"<br>");
+        document.write("<br><br>");
+
+        //date: getDate/getDay/getFullYears/getMinutes/
+
+        var object=new Date();
+        document.write(
+        "Date:",object.getDate(),"<br>",
+        "day:",object.getDay(),"<br>",
+        "year:",object.getFullYear(),"<br>",
+        "hour:",object.getHours(),"<br>",
+        "Month:",object.getMonth(),"<br>",
+        "time:",object.getTime(),"<br> <br>",
+        );
+
+        //Math.abs(num)/ceil(num)/floor(num)/max(num)/min(num)/random()/round(num)/
+
+
+        //number:isInteger()/isFinite()/parseFloat()/parseInt()/toFixed()/toString()/
+
+        var a=10.5467754;
+        var b="10.45584586949485950493954";
+        
+        document.write(Number.isInteger(a),"<br>");
+        document.write(Number.isFinite(a),"<br>");
+        document.write(Number.parseFloat(b),"<br>");
+        document.write(Number.parseInt(b),"<br>");
+        document.write(a.toFixed(3),"<br>");
+        document.write(a.toString(a),"<br>");
+        document.write("<br><br>");
+
+    </script>
+</body>
+</html>

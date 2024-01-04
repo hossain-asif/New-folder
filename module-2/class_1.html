@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+
+    <!-- in-page implementation  -->
+    <!-- for that we should use class selector(using .)/Tag selector(using tag only)/Id selector(using #) -->
+    <!-- universal selector(*{})/ group selector(h1,h2,h3{}) -->
+    <!-- this css design is olny work in this page -->
+    <!-- won't work in another page -->
+
+    <style>
+        /* universal selector */
+        /* *{
+            color: aqua;
+            background-color: bisque;
+        } */
+
+        /* group selector */
+        /* h1,h2,h3,p{
+            color:blue;
+        } */
+
+        /* element selector */
+        h1{
+            color: aqua; /* color indicates text color */ 
+        }
+
+        /* class selector */
+        .name{
+            color:rgb(118, 15, 215);
+        }
+
+        .btn{
+            background-color: rgb(221, 0, 255);
+            color: aquamarine;
+        }
+
+        /* id selector */
+        /* Id always unique and there are no same id  */
+        #italic{
+            color:rgb(165, 149, 162)
+        }
+
+    </style>
+
+    <!-- for external implementation -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="my-background">
+    <!-- inline  implementation-->
+    <h1 style="color:rgb(255, 0, 140)"> Minhaz Hossain Asif</h1>
+    <hr>
+
+    <!-- in page implementation -->
+    <h1>In page implementation</h1>
+    <h1>Minhaz Hossain Asif</h1>
+    <h1>Minhaz Hossain Asif</h1>
+    <h1>Minhaz Hossain Asif</h1>
+    
+    <h2 class="name">Minhaz Hossain Asif</h2>
+    <h2>Roll:2011</h2>
+    <h2 class="name">IIT-JU</h2>
+    <button class="btn">submit</button> <br>
+
+    <i id="italic"> this is CSS class</i><br>
+
+
+    <button class="btn">submit</button> <br><br>
+    <button class="btn">submit</button> <br><br>
+    <button class="btn">submit</button> <br><br>
+    <button class="btn">submit</button> <br><br>
+
+    <hr>
+    <h1 class="my-text">External implementation</h1>
+    
+    <p class="my-border">Lorem ipsum, dolor sit amet 
+        consectetur adipisicing 
+        elit.Quia aliquam ratione odio eum ab nobis
+        hic inventore quam laudantium, 
+        officia ullam corrupti neque 
+        iusto praesentium recusandae maiores, 
+        eaque distinctio.Saepe eveniet, 
+        enim dolore qui a laudantium maxime 
+        animi? Vel reprehenderit praesentium repellat
+        earum deleniti, ipsam rerum accusamus
+        recusandae perferendis nam.</p>
+    
+        <button class="my-btn">submit</button>
+
+        <img
+        class="my-img" 
+        src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1222169770.1701907200&semt=sph" 
+        alt="">
+
+        <p>A</p>
+        <p>B</p>
+        <p>C</p>
+        <p>D</p>
+
+
+</body>
+</html>

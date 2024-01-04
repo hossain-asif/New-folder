@@ -1,0 +1,130 @@
+/* normalize CSS: tag selector */
+
+/* CSS library */
+/* bootstrap CSS*/
+/* tailwind CSS*/
+/* Bluma CSS */
+/* foundation CSS*/
+/* milligram CSS */
+
+
+
+.my-background{
+    background-color: rgb(124, 181, 71);
+    background-image: url("image/flower.jpg");
+    /* background-image: url("../image/back.jpg"); if CSS file in another folder. */
+    /* to out from folder we use ../ then enter to the image folder */
+    /* background-image: url("https://static.vecteezy.com/system/resources/previews/010/008/086/non_2x/background-dimension-3d-graphic-message-board-for-text-and-message-design-line-shadow-for-modern-web-design-free-vector.jpg"); */
+    background-attachment: fixed; /* fixed/relative */
+    background-repeat:repeat-y; /* no-repeat/repeat/repeat-x/repeat-y */
+    background-position: center;
+    background-size: cover; /* to cover full webpage*/ 
+    object-fit: cover; 
+}
+
+.my-border{
+    border: 10px solid red;
+
+    border-style: double;
+    border-style: dashed;
+    border-style: inset;
+    border-style: outset;
+    border-style: ridge;
+    border-style: groove;
+
+    border-radius: 80px 5px 80px 20px; /*top right bottom left=clockwise*/
+
+    cursor: pointer;
+    cursor: grab;
+    cursor: progress;
+    cursor: cell;
+    cursor: all-scroll;
+    cursor: crosshair;
+    cursor: alias;
+    cursor: auto;
+    cursor: col-resize;
+    cursor: e-resize;
+    cursor: ew-resize;
+    cursor: help;
+    cursor: n-resize;
+    cursor: ne-resize;
+    cursor: ns-resize;
+    cursor: sw-resize;
+    cursor: s-resize;
+    cursor: sw-resize;
+    cursor: text;
+
+
+    
+
+}
+
+p{
+    
+    display: inline;
+    display: inline-block;
+    display: none;
+    display: run-in;
+    display: block;
+
+
+}
+
+
+.my-text{
+    color: blueviolet;
+
+    float: right;
+    float: left;
+    float: initial;
+    float: inherit;
+
+    
+}
+
+
+.my-btn{
+    background-color: rgb(12, 70, 70);
+    color: white;
+    border: none;
+    border-radius: 3px;
+
+    
+    margin-top: 10px;
+    margin-left: 500px;
+    margin: 100px;
+
+
+    
+    padding: 100px;
+    padding-top: 30px;
+    padding-left: 5px;
+    padding: 10px 20px 10px 20px;
+}
+
+.my-btn:hover{
+    /* margin: 0; */
+    background-color: rgb(139, 96, 180);
+    padding: 15px 30px 15px 30px;
+}
+
+.my-img{
+    filter: brightness(100%);
+    filter: blur(0px);
+    filter: invert(1);
+    filter: saturate(40);
+    filter: contrast(50%);
+    filter: opacity(40%);
+    filter: hue-rotate(240deg);
+    filter: grayscale(100%);
+    filter: sepia(100%);          /*vintage type*/
+
+    height: 100px;
+    width: 100px;
+}
+
+.my-img:hover{
+    filter:grayscale(10%);
+    height:400px;
+    width: 400px;
+}

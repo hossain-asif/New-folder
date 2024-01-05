@@ -1,0 +1,40 @@
+
+/* 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+nav{
+    height: 100px;
+    width: 100%;
+    position: absolute;
+}
+.assignment-nav{
+    background-color: crimson;
+    box-sizing: border-box;
+    box-shadow: 8px 8px 8px 8px rgb(242, 136, 163);
+}
+
+
+
+.navbar-toggler:focus{
+    box-shadow: none !important;
+}
+
+
+@media(max-width:767px){
+    .assignment-ul{
+        background-color:coral !important;
+        padding: ;
+    }
+    .navbar{
+        padding: 0 !important;
+    }
+}
+
+
+nav .nav-item a:hover{
+    color: rgb(222, 185, 139) !important;
+}

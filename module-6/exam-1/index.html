@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h3>question 2 </h3>
+    <br><br>
+    <input id="questionTwo" type="text">
+    <button onclick="vowelCount()">ok</button>
+    <p id="answerTwo"></p>
+    <br><br><br><br>
+
+    <h3>Question no 3 </h3>
+    <br><br>
+    <p>
+        1. Primitive Data Types:<br>
+            a.String: var string = "Hello, World!";<br>
+            b.Number: var number = 42; <br>
+            c.Boolean: var check = true; <br>
+            d.Undefined: var isUndefined ; <br>
+            e.Null: var isNull = null; <br>
+        2. Non-Primitive Data Types:<br>
+            a.Object: var myObject = { name: "Asif", age: 24 };<br>
+            b.Array: var myArray = [1, 2, 3, 4, 5]; <br>
+            c.RegExp: var myRegExp = /pattern/; <br>
+
+
+    </p>
+
+    <h3>question no 1</h3>
+    
+    <script>
+        
+        
+        var res=document.getElementById("questionOne");
+        for(var i=1;i<=10;i++){
+            document.write('Multiplication of ' + i + "<br>");
+            for(var j=1;j<=10;j++){
+                document.write( i + ' * ' + j + ' = ' + (i*j) + "<br>" );
+            }
+        }
+
+        document.write("<br><br>");
+        // document.write('Question on 2' + "<br><br>" );
+
+
+
+
+        function vowelCount(){
+
+            var str = document.getElementById("questionTwo").value;
+            var res = document.getElementById("answerTwo");
+
+            var cnt=0;
+            for(var i=0;i<str.length;i++){
+                if(str[i]=="a" || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' || str[i]=="A" || str[i]=='E' || str[i]=='I' || str[i]=='O' || str[i]=='U') {
+                    cnt++;
+                }
+            }
+
+            res.innerText = 'number of vowels of this string: '+ cnt;
+
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

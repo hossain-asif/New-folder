@@ -32,7 +32,8 @@ let server = http.createServer((req,res)=>{
         res.end();
     }
 });
-
 server.listen(5050);
-
 console.log('Server Run Success');
+
+
+//7,8

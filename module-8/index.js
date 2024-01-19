@@ -37,28 +37,51 @@
 
 
 //9
+// const http = require('http');
+// const url = require('url');
+
+// let server = http.createServer((req,res)=>{
+//     let myUrl = "https://www.youtube.com/watch?v=Xg4effPSJXk&list=PLHiZ4m8vCp9PHnOIT7gd30PCBoYCpGoQM&index=8";
+
+//     let urlObject = url.parse(myUrl,true);
+
+//     let urlhostName = urlObject.host;
+//     let urlPathName = urlObject.pathname;
+//     let urlSearch = urlObject.search;
+
+
+//     res.writeHead(200,{'content-type':'text/html'});
+//     res.write('host: ' + urlhostName + "<br>");
+//     res.write('path: ' + urlPathName + "<br>");
+//     res.write('search query: ' + urlSearch + "<br>");
+
+//     res.end();
+
+// });
+// server.listen(5050);
+// console.log('Server Run Success');
+
+
+
+//14:
+
+const fs = require('fs');
 const http = require('http');
-const url = require('url');
 
 let server = http.createServer((req,res)=>{
-    let myUrl = "https://www.youtube.com/watch?v=Xg4effPSJXk&list=PLHiZ4m8vCp9PHnOIT7gd30PCBoYCpGoQM&index=8";
 
-    let urlObject = url.parse(myUrl,true);
+    if(req.url=='/'){
+        fs.readFile('home.html',(err,data)=>{
+            res.writeHead(200,{'content-type' : 'text/html'});
+            res.write(data);
+            res.end();
+            
+        });
 
-    let urlhostName = urlObject.host;
-    let urlPathName = urlObject.pathname;
-    let urlSearch = urlObject.search;
-
-
-    res.writeHead(200,{'content-type':'text/html'});
-    res.write('host: ' + urlhostName + "<br>");
-    res.write('path: ' + urlPathName + "<br>");
-    res.write('search query: ' + urlSearch + "<br>");
-
-    res.end();
+    }
 
 });
-server.listen(5050);
-console.log('Server Run Success');
 
+server.listen(4040);
+console.log("Server Run Success")
 

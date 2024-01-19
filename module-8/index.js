@@ -65,23 +65,40 @@
 
 //14:
 
+// const fs = require('fs');
+// const http = require('http');
+
+// let server = http.createServer((req,res)=>{
+
+//     if(req.url=='/'){
+//         fs.readFile('home.html',(err,data)=>{
+//             res.writeHead(200,{'content-type' : 'text/html'});
+//             res.write(data);
+//             res.end();
+
+//         });
+
+//     }
+
+// });
+
+// server.listen(4040);
+// console.log("Server Run Success")
+
+
+//15
+
 const fs = require('fs');
 const http = require('http');
 
+
 let server = http.createServer((req,res)=>{
 
-    if(req.url=='/'){
-        fs.readFile('home.html',(err,data)=>{
-            res.writeHead(200,{'content-type' : 'text/html'});
-            res.write(data);
-            res.end();
-            
-        });
-
-    }
-
+    let data = fs.readFileSync('home.html');
+    res.writeHead(200,{'content-type':'text/html'});
+    res.write(data);
+    res.end();
 });
 
-server.listen(4040);
-console.log("Server Run Success")
-
+server.listen(4000);
+console.log("Server Run success");

@@ -107,13 +107,41 @@
 
 //16
 
+// const fs = require('fs');
+// const http = require('http');
+
+// let server = http.createServer((req,res)=>{
+//     if(req.url=="/"){
+//         fs.writeFile('demo.txt','Minhaz Hossain Asif',function (error){
+//             if(error){
+//             res.writeHead(200,{'content-type':'text/html'});
+//             res.write("File write failed");
+//             res.end();
+//             }
+//             else{
+//                 res.writeHead(200,{'content-type':'text/html'});
+//                 res.write("File write success");
+//                 res.end();                
+//             }
+//         });
+//     }
+
+// });
+
+// server.listen(5050);
+// console.log("server running"); 
+
+
+//1
+
 const fs = require('fs');
 const http = require('http');
 
 let server = http.createServer((req,res)=>{
     if(req.url=="/"){
-        fs.writeFile('demo.txt','Minhaz Hossain Asif',function (error){
-            if(error){
+        let error = fs.writeFileSync('demoSync.txt','Minhaz Hossain asif from Chittagong');
+
+        if(error){
             res.writeHead(200,{'content-type':'text/html'});
             res.write("File write failed");
             res.end();
@@ -123,7 +151,6 @@ let server = http.createServer((req,res)=>{
                 res.write("File write success");
                 res.end();                
             }
-        });
     }
 
 });

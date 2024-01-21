@@ -132,26 +132,148 @@
 // console.log("server running"); 
 
 
-//1
+//17
+
+// const fs = require('fs');
+// const http = require('http');
+
+// let server = http.createServer((req,res)=>{
+//     if(req.url=="/"){
+//         let error = fs.writeFileSync('demoSync.txt','Minhaz Hossain asif from Chittagong');
+
+//         if(error){
+//             res.writeHead(200,{'content-type':'text/html'});
+//             res.write("File write failed");
+//             res.end();
+//             }
+//             else{
+//                 res.writeHead(200,{'content-type':'text/html'});
+//                 res.write("File write success");
+//                 res.end();                
+//             }
+//     }
+
+// });
+
+// server.listen(5050);
+// console.log("server running"); 
+
+
+//18
+// const fs = require('fs');
+// const http = require('http');
+
+// let server = http.createServer((req,res)=>{
+
+//     fs.rename('demo.txt','demoNew.txt',(error)=>{
+//         if(error){
+//             res.writeHead(200,{'content-type':'text/html'});
+//             res.write("File rename failed");
+//             res.end();
+//             }
+//         else{
+//             res.writeHead(200,{'content-type':'text/html'});
+//             res.write("File rename success");
+//             res.end();                
+//         }
+//     });
+
+
+    
+
+// });
+
+// server.listen(5050);
+// console.log("server running"); 
+
+
+
+
+//19
+// const fs = require('fs');
+// const http = require('http');
+
+// let server = http.createServer((req,res)=>{
+
+//     if(req.url=='/'){
+//         let result = fs.renameSync('demoSync.txt','demoSyncNew.txt');
+
+//         if(error){
+//             res.writeHead(200,{'content-type':'text/html'});
+//             res.write("File rename fail");
+//             res.end();
+//             }
+//         else{
+//             res.writeHead(200,{'content-type':'text/html'});
+//             res.write("File rename success");
+//             res.end();                
+//         }
+
+//     }
+    
+
+// });
+
+// server.listen(5050);
+// console.log("server running"); 
+
+// //20
+
+// const fs = require('fs');
+// const http = require('http');
+
+// let server = http.createServer((req,res)=>{
+
+//     if(req.url=='/'){
+//         fs.unlink('demoNew.txt',(error)=>{
+//             if(error){
+//                 res.writeHead(200,{'content-type':'text/html'});
+//                 res.write("File delete fail");
+//                 res.end();
+//                 }
+//             else{
+//                 res.writeHead(200,{'content-type':'text/html'});
+//                 res.write("File delete success");
+//                 res.end();                
+//             }
+//         });
+
+
+//     }
+    
+
+// });
+
+// server.listen(5050);
+// console.log("server running"); 
+
+
+
+
+
+//21
 
 const fs = require('fs');
 const http = require('http');
 
 let server = http.createServer((req,res)=>{
-    if(req.url=="/"){
-        let error = fs.writeFileSync('demoSync.txt','Minhaz Hossain asif from Chittagong');
 
+    if(req.url=='/'){
+        let error = fs.unlinkSync('demoSyncNew.txt');
         if(error){
             res.writeHead(200,{'content-type':'text/html'});
-            res.write("File write failed");
+            res.write("File delete fail");
             res.end();
             }
-            else{
-                res.writeHead(200,{'content-type':'text/html'});
-                res.write("File write success");
-                res.end();                
-            }
+        else{
+            res.writeHead(200,{'content-type':'text/html'});
+            res.write("File delete success");
+            res.end();                
+        }
+
+
     }
+    
 
 });
 

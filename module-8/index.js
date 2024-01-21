@@ -88,17 +88,45 @@
 
 //15
 
+// const fs = require('fs');
+// const http = require('http');
+
+
+// let server = http.createServer((req,res)=>{
+
+//     let data = fs.readFileSync('home.html');
+//     res.writeHead(200,{'content-type':'text/html'});
+//     res.write(data);
+//     res.end();
+// });
+
+// server.listen(4000);
+// console.log("Server Run success");
+
+
+
+//16
+
 const fs = require('fs');
 const http = require('http');
 
-
 let server = http.createServer((req,res)=>{
+    if(req.url=="/"){
+        fs.writeFile('demo.txt','Minhaz Hossain Asif',function (error){
+            if(error){
+            res.writeHead(200,{'content-type':'text/html'});
+            res.write("File write failed");
+            res.end();
+            }
+            else{
+                res.writeHead(200,{'content-type':'text/html'});
+                res.write("File write success");
+                res.end();                
+            }
+        });
+    }
 
-    let data = fs.readFileSync('home.html');
-    res.writeHead(200,{'content-type':'text/html'});
-    res.write(data);
-    res.end();
 });
 
-server.listen(4000);
-console.log("Server Run success");
+server.listen(5050);
+console.log("server running"); 

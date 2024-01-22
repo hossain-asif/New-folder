@@ -253,29 +253,69 @@
 
 //21
 
+// const fs = require('fs');
+// const http = require('http');
+
+// let server = http.createServer((req,res)=>{
+
+//     if(req.url=='/'){
+//         let error = fs.unlinkSync('demoSyncNew.txt');
+//         if(error){
+//             res.writeHead(200,{'content-type':'text/html'});
+//             res.write("File delete fail");
+//             res.end();
+//             }
+//         else{
+//             res.writeHead(200,{'content-type':'text/html'});
+//             res.write("File delete success");
+//             res.end();                
+//         }
+
+
+//     }
+    
+
+// });
+
+// server.listen(5050);
+// console.log("server running"); 
+
+
+//22 23
+
 const fs = require('fs');
 const http = require('http');
 
+//sync
 let server = http.createServer((req,res)=>{
+    if(req.url == '/'){
+        // let result = fs.existsSync('demo.txt');
+        // if(result){
+        //     res.writeHead(200,{'content-type':'text/html'});
+        //     res.write("Exists");
+        //     res.end();
+        // }
+        // else {
+        //     res.writeHead(200,{'content-type':'text/html'});
+        //     res.write("Not Exists");
+        //     res.end();
+        // }
 
-    if(req.url=='/'){
-        let error = fs.unlinkSync('demoSyncNew.txt');
-        if(error){
-            res.writeHead(200,{'content-type':'text/html'});
-            res.write("File delete fail");
-            res.end();
+        fs.exists('demo.txt',(result)=>{
+            if(result){
+                res.writeHead(200,{'content-type':'text/html'});
+                res.write("Exists");
+                res.end();
             }
-        else{
-            res.writeHead(200,{'content-type':'text/html'});
-            res.write("File delete success");
-            res.end();                
-        }
-
-
+            else {
+                res.writeHead(200,{'content-type':'text/html'});
+                res.write("Not Exists");
+                res.end();
+            }
+        });
+        
     }
-    
-
 });
 
 server.listen(5050);
-console.log("server running"); 
+console.log("Server running");

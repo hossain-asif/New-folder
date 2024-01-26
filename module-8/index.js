@@ -283,12 +283,12 @@
 
 //22 23
 
-const fs = require('fs');
-const http = require('http');
+// const fs = require('fs');
+// const http = require('http');
 
 //sync
-let server = http.createServer((req,res)=>{
-    if(req.url == '/'){
+// let server = http.createServer((req,res)=>{
+//     if(req.url == '/'){
         // let result = fs.existsSync('demo.txt');
         // if(result){
         //     res.writeHead(200,{'content-type':'text/html'});
@@ -301,21 +301,26 @@ let server = http.createServer((req,res)=>{
         //     res.end();
         // }
 
-        fs.exists('demo.txt',(result)=>{
-            if(result){
-                res.writeHead(200,{'content-type':'text/html'});
-                res.write("Exists");
-                res.end();
-            }
-            else {
-                res.writeHead(200,{'content-type':'text/html'});
-                res.write("Not Exists");
-                res.end();
-            }
-        });
+//         fs.exists('demo.txt',(result)=>{
+//             if(result){
+//                 res.writeHead(200,{'content-type':'text/html'});
+//                 res.write("Exists");
+//                 res.end();
+//             }
+//             else {
+//                 res.writeHead(200,{'content-type':'text/html'});
+//                 res.write("Not Exists");
+//                 res.end();
+//             }
+//         });
         
-    }
-});
+//     }
+// });
 
-server.listen(5050);
-console.log("Server running");
+// server.listen(5050);
+// console.log("Server running");
+// console.log("Server running");
+
+
+//25 26 27
+

@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- tailwindcss:daisyui -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Recipe webpage</title>
+</head>
+<body>
+
+    <div class="h-full w-full relative">
+        <img class="h-[45rem] w-full" src="https://images.pexels.com/photos/326281/pexels-photo-326281.jpeg?cs=srgb&dl=pexels-pixabay-326281.jpg&fm=jpg" alt="">
+        <div class="absolute bottom-1/2 px-4 py-3 w-full glass">
+          <h1 class="text-white font-semibold text-4xl"> Discover Your Food from our list </h1>
+          <p class="text-gray-200">
+            Healthy Foods and best services are given from us. 
+          </p>
+        </div>
+    </div>
+    <br>
+
+    <div class="flex justify-center gap-x-5 my-10">
+
+        <input id="search_text" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs"/>
+
+        <button id="search_button" class="btn btn-outline btn-success">Success</button>
+
+    </div>
+
+    <div class="flex justify-center">
+        <span id="spinner" class="loading loading-spinner loading-lg hidden"></span>
+
+    </div>
+
+    <br>
+    <br>
+    <div id="food_card_container" class="container cardContainer mx-32 grid grid-cols-3 gap-10">
+
+        
+
+              <!-- CARD START -->
+
+
+              <!-- CARD END -->
+
+
+        
+
+
+    </div>
+    
+
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>

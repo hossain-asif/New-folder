@@ -1,0 +1,501 @@
+
+
+                        ****    database related query    ****
+
+db.help()
+
+db.hostInfo()
+    
+db.getName()
+
+db.getMongo()
+
+db.currentOp()
+
+use('shop')
+db.dropDatabase()
+
+db.getCollectionInfos()
+
+db.getCollectionNames()
+
+db.isMaster()
+
+db.listCommands()
+
+db.logout()
+
+db.printCollectionStats()
+
+db.serverBuildInfo()
+
+db.serverStatus()
+
+db.shutdownServer()
+
+db.stats()
+
+db.version()
+
+db.createCollection("demoCollection")
+
+db.demoCollection.drop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+use("CraftShop")
+
+db.brands.insertOne(
+    {
+        "name":"Apple"
+    }
+)
+
+db.brands.insertMany(
+    [
+        {"name":"Apple"},
+        {"name":"Microsoft"},
+        {"name":"IBM"},
+        {"name":"Dell"}
+    ]
+)
+
+
+db.brands.find()
+
+db.brands.findOne()
+
+db.brands.findOne(
+    {
+        "name":"Dell"
+    }
+)
+
+
+dummy data
+db.employees.insertMany([
+    {
+      "name": "Rafiq",
+      "destination": "Chittagong",
+      "salary": 12000,
+      "city": "Chittagong"
+    },
+    {
+      "name": "Sofia",
+      "destination": "Dhaka",
+      "salary": 15000,
+      "city": "Dhaka"
+    },
+    {
+      "name": "Ahmed",
+      "destination": "Khulna",
+      "salary": 11000,
+      "city": "Khulna"
+    },
+    {
+      "name": "Fatima",
+      "destination": "Sylhet",
+      "salary": 13000,
+      "city": "Sylhet"
+    },
+    {
+      "name": "Kamal",
+      "destination": "Rajshahi",
+      "salary": 14000,
+      "city": "Rajshahi"
+    },
+    {
+      "name": "Ayesha",
+      "destination": "Barisal",
+      "salary": 12500,
+      "city": "Barisal"
+    },
+    {
+      "name": "Ismail",
+      "destination": "Dinajpur",
+      "salary": 11500,
+      "city": "Dinajpur"
+    },
+    {
+      "name": "Sadia",
+      "destination": "Rangpur",
+      "salary": 12800,
+      "city": "Rangpur"
+    },
+    {
+      "name": "Khalid",
+      "destination": "Comilla",
+      "salary": 12200,
+      "city": "Comilla"
+    },
+    {
+      "name": "Laila",
+      "destination": "Jessore",
+      "salary": 11800,
+      "city": "Jessore"
+    },
+    {
+      "name": "Mazhar",
+      "destination": "Mymensingh",
+      "salary": 13500,
+      "city": "Mymensingh"
+    },
+    {
+      "name": "Rima",
+      "destination": "Cox's Bazar",
+      "salary": 12500,
+      "city": "Cox's Bazar"
+    },
+    {
+      "name": "Arif",
+      "destination": "Narayanganj",
+      "salary": 13200,
+      "city": "Narayanganj"
+    },
+    {
+      "name": "Farida",
+      "destination": "Bogra",
+      "salary": 11700,
+      "city": "Bogra"
+    },
+    {
+      "name": "Rafiqul",
+      "destination": "Feni",
+      "salary": 12600,
+      "city": "Feni"
+    },
+    {
+      "name": "Nahid",
+      "destination": "Tangail",
+      "salary": 12000,
+      "city": "Tangail"
+    },
+    {
+      "name": "Shima",
+      "destination": "Narsingdi",
+      "salary": 12400,
+      "city": "Narsingdi"
+    },
+    {
+      "name": "Aminul",
+      "destination": "Kushtia",
+      "salary": 11200,
+      "city": "Kushtia"
+    },
+    {
+      "name": "Farhana",
+      "destination": "Gazipur",
+      "salary": 13000,
+      "city": "Gazipur"
+    },
+    {
+      "name": "Rahim",
+      "destination": "Pabna",
+      "salary": 12800,
+      "city": "Pabna"
+    }
+  ])
+  
+
+
+projection:
+The error message "Cannot do exclusion on field city in inclusion projection" typically occurs in MongoDB when you try to use both inclusion and exclusion projections in the same query for the same field
+To resolve this issue, you need to choose either inclusion or exclusion for each field in your projection. 
+
+db.employees.find(
+    {},
+    {
+        _id:0,
+        city:0        
+    }
+)
+
+
+comparison query operator
+equal
+db.employees.find(
+    {
+        salary:{$eq:12000}
+    }
+)
+
+greater than
+db.employees.find(
+    {
+        salary:{$gt:12000}
+    }
+)
+
+greater than & equal
+db.employees.find(
+    {
+        salary:{$gte:12000}
+    }
+)
+
+less than
+db.employees.find(
+    {
+        salary:{$lt:12000}
+    }
+)
+
+less than & eaual
+db.employees.find(
+    {
+        salary:{$lte:12000}
+    }
+)
+
+
+not equal
+db.employees.find(
+    {
+        salary:{$ne:12000}
+    }
+)
+
+in operator
+db.employees.find(
+    {
+    salary:{$in:[12000,12500]}
+    }
+)
+
+not in operator
+db.employees.find(
+    {
+    salary:{$nin:[12000,12500]}
+    }
+)
+
+
+and
+db.employees.find({
+    $and:[
+        {salary:{$gte:12000}},
+        {city:{$eq:'Chittagong'}}
+    ]
+})
+
+or
+db.employees.find({
+    $or:[
+        {salary:{$lt:12000}},
+        {salary:{$gt:14000}}
+    ]
+})
+
+
+exist
+db.employees.find({
+    city:{$exists:true}
+})
+
+type:
+db.employees.find(
+    {
+    salary:{$type:16}
+    }
+)
+
+
+db.practice.insertMany(
+    [
+        {
+          "category": "food",
+          "budget": 100,
+          "spent": 150
+        },
+        {
+          "category": "clothing",
+          "budget": 120,
+          "spent": 90
+        },
+        {
+          "category": "electronics",
+          "budget": 150,
+          "spent": 130
+        },
+        {
+          "category": "entertainment",
+          "budget": 80,
+          "spent": 110
+        },
+        {
+          "category": "travel",
+          "budget": 200,
+          "spent": 180
+        },
+        {
+          "category": "health",
+          "budget": 90,
+          "spent": 75
+        },
+        {
+          "category": "home",
+          "budget": 110,
+          "spent": 95
+        },
+        {
+          "category": "gifts",
+          "budget": 130,
+          "spent": 120
+        },
+        {
+          "category": "dining",
+          "budget": 100,
+          "spent": 80
+        },
+        {
+          "category": "books",
+          "budget": 120,
+          "spent": 140
+        },
+        {
+          "category": "sports",
+          "budget": 110,
+          "spent": 100
+        },
+        {
+          "category": "beauty",
+          "budget": 95,
+          "spent": 75
+        },
+        {
+          "category": "hobbies",
+          "budget": 150,
+          "spent": 170
+        },
+        {
+          "category": "car",
+          "budget": 180,
+          "spent": 160
+        },
+        {
+          "category": "education",
+          "budget": 100,
+          "spent": 120
+        },
+        {
+          "category": "music",
+          "budget": 130,
+          "spent": 110
+        },
+        {
+          "category": "outdoor",
+          "budget": 120,
+          "spent": 90
+        },
+        {
+          "category": "pets",
+          "budget": 140,
+          "spent": 130
+        },
+        {
+          "category": "utilities",
+          "budget": 110,
+          "spent": 95
+        },
+        {
+          "category": "travel",
+          "budget": 160,
+          "spent": 140
+        }
+      ]
+      
+)
+
+expr
+db.practice.find(
+    {
+        $expr:{
+            $gt:["$budget","$spent"]
+        }
+    }
+)
+
+mod
+db.practice.find(
+    {
+        spent:{$mod:[2,0]}
+    }
+)
+
+regex
+db.employees.find(
+    {
+        name:{$regex:"A"}
+    }
+)
+
+where
+db.practice.find(
+    {
+        $where:"this.budget > this.spent"
+    }
+)
+
+sort in ascending order
+db.employees.find().sort(
+    {
+        name:1
+    }
+)
+
+sort in descending order
+db.employees.find().sort(
+    {
+        name:-1
+    }
+)
+
+count total row
+db.employees.find().count('total')
+
+limit
+db.employees.find().limit(2)
+
+limit: ex:last two
+db.employees.find().sort({"_id":-1}).limit(2)
+
+
+distinct
+db.employees.distinct('name')
+
+
+deleteOne
+db.employees.deleteOne({
+    name:"Rafiq"
+})
+
+
+delete many
+db.employees.deleteMany(
+    {
+        salary:{$in:[12000,12500,13000]}
+    }
+)
+
+
+
+
+
+
+
+
+

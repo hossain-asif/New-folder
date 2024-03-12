@@ -1,6 +1,6 @@
 
 const app = require("./app");
 
-app.listen(300,()=>{
+app.listen(3000,()=>{
     console.log("server running.....@3000 port");
 })

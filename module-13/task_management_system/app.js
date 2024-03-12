@@ -1,7 +1,7 @@
 
 
 const express = require('express');
-const router = require('./src/route/api');
+const router = require('./src/route/api.js');
 const app = new express();
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
@@ -41,9 +41,9 @@ mongoose.connect(URL, OPTIONS)
 //Route Implement
 app.use("/api",router);
 
-app.use("*",(req,res)=>{
-    res.status(404).json({data:"Not Found"});
-});
+// app.use("*",(req,res)=>{
+//     res.status(404).json({data:"Not Found"});
+// });
 
 
 module.exports = app;

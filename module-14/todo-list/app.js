@@ -19,7 +19,7 @@ app.use(express.json({limit:'20mb'}));
 app.use(express.urlencoded({extended:true}));
 
 let limiter = rateLimit({windowMs:15*60*1000,max:3000});
-app.use(limiter);
+ app.use(limiter);
 
 
 

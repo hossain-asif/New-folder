@@ -27,3 +27,8 @@ router.post("/todo/create",authMiddleware,todoController.todoCreate);
 router.post("/todo/update/:id",authMiddleware,todoController.todoUpdate);
 router.get("/todo/delete/:id",authMiddleware,todoController.todoDelete);
 router.get("/todo/read",authMiddleware,todoController.todoShow);
+
+
+
+
+module.exports = router;

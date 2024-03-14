@@ -1,0 +1,47 @@
+
+
+1.react build
+    a.npm create vite@latest
+    b.npx create-react-app my-app
+2. for vite : npm i
+3.project structure
+    a.delete app.css and index.css
+    b.app.jsx clear all internal code
+    c.in main.jsx clear .css code
+    d.in assets folder->
+        A.create css and images folder 
+        B.react.svg move to images
+        C.create style.css in css folder
+        D.create components,loader,pages,layout(common for all),utility,store(for state), folder in src folder
+        E.create .jsx file in pages,components,loader,layout folder
+        F.create .js(javascript) file in utility,store folder
+        
+4. react start: app.jsx
+   root file:main.jsx (import (in this file) which load from the very first time)
+   
+5.component structure
+    a.shortcut: rafce(arrow function)
+    b. run: npm run dev
+    c.JSX-> view
+        a.write simple js => {}
+        b.write broad js:
+            {
+                (()=>{
+                    ......
+                })()
+            }
+        c.convention
+            A.must self close in tag
+            B.camel-case in all attributes
+            C.inline css=> write in object style & camel-case: {{backgrondColor:"red"}}
+            D.ternary operator:{age>18?("You are adult"):("You are child")}
+            E.&&: same as C++
+            F.loop:{
+                        array.map((item)=>{
+                            return <li>{item}</li>
+                        })
+                    }
+            
+
+     
+        

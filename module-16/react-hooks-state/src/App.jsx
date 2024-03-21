@@ -82,6 +82,8 @@ export const App = () => {
         [key]:[value]
       }))
     }
+
+    
     let inputLoginData2=(e)=>{
       let key = e.target.name;
       let value = e.target.value;

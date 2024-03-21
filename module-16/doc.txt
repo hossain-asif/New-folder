@@ -13,54 +13,18 @@
 
 
 3.
-export const App = () => {
-
-  const [loginData,SetLoginData] = useState(
-    { 
-      fname:"...",
-      lname:"...",
-    }
-    );    -----> object shape data
-
-
-    let inputLoginData=(key,value)=>{
-      SetLoginData(loginData=>({
-        ...loginData,   ---------> previous data
-        [key]:[value]   ---------> [] for variable 
-      }))               ---------> [key]=[value] changing the previous state
-    }
-
-    in this above case: in setLoginData function we change login data by using   => loginData=>({...loginData,[key]:value})
-
-    let inputLoginData2=(e)=>{
-      let key = e.target.name;
-      let value = e.target.value;
-      SetLoginData(loginData=>({
-        ...loginData,
-        [key]:[value]
-      }))
-    }
-
-
-
-  return (
-    <div>
-
-      <ul>
-        <li>fname::{loginData.fname}</li>
-        <li>lname::{loginData.lname}</li>
-      </ul>
-
-      <br />
-
-      <label htmlFor="">first Name::</label>
-      <input onChange={(e)=>{inputLoginData('fname',e.target.value)}} type="text" />
-      <br />
-
-
-      <label htmlFor="">last Name::</label>
-      <input name='lname' onChange={(e)=>{inputLoginData(e.target.name,e.target.value)}}  type="text" />
-      <br />
-    </div>
-  )
-}
+  1.make virtual DOM
+  2.make fuction for event 
+    a.    
+      let inputLoginData2=(e)=>{
+          let key = e.target.name;
+          let value = e.target.value;
+          SetLoginData(loginData=>({
+            ...loginData,
+            [key]:[value]
+          }))
+      }
+  3.code
+    <label htmlFor="">first Name::</label>
+    <input onChange={(e)=>{inputLoginData('fname',e.target.value)}} type="text" />
+    <br />

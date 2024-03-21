@@ -21,7 +21,11 @@
    
 5.component structure
     a.shortcut: rafce(arrow function)
-    b. run: npm run dev
+    
+    b. run: 
+        A.npm run dev
+        B.npx vite
+
     c.JSX-> view
         a.write simple js => {}
         b.write broad js:

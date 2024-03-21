@@ -1,0 +1,66 @@
+
+
+
+1.for state management: virtual DOM
+    const [Number,SetNumber] = useState(0);
+    Number = variable
+    SetNumber = function for changing variable
+    useState(0) = initially view this value
+
+
+2. const [loginData,SetLoginData] = useState({email:"....",password:"...."})
+    in this case:{email:"....",password:"...."} => object shape 
+
+
+3.
+export const App = () => {
+
+  const [loginData,SetLoginData] = useState(
+    { 
+      fname:"...",
+      lname:"...",
+    }
+    );    -----> object shape data
+
+
+    let inputLoginData=(key,value)=>{
+      SetLoginData(loginData=>({
+        ...loginData,   ---------> previous data
+        [key]:[value]   ---------> [] for variable 
+      }))               ---------> [key]=[value] changing the previous state
+    }
+
+    in this above case: in setLoginData function we change login data by using   => loginData=>({...loginData,[key]:value})
+
+    let inputLoginData2=(e)=>{
+      let key = e.target.name;
+      let value = e.target.value;
+      SetLoginData(loginData=>({
+        ...loginData,
+        [key]:[value]
+      }))
+    }
+
+
+
+  return (
+    <div>
+
+      <ul>
+        <li>fname::{loginData.fname}</li>
+        <li>lname::{loginData.lname}</li>
+      </ul>
+
+      <br />
+
+      <label htmlFor="">first Name::</label>
+      <input onChange={(e)=>{inputLoginData('fname',e.target.value)}} type="text" />
+      <br />
+
+
+      <label htmlFor="">last Name::</label>
+      <input name='lname' onChange={(e)=>{inputLoginData(e.target.name,e.target.value)}}  type="text" />
+      <br />
+    </div>
+  )
+}

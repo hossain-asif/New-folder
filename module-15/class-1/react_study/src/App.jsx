@@ -90,20 +90,52 @@ const App = () => {
 
 
 
-let array = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+// let array = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 
-return(
-    <div>
-        <ol>
-            {
-                array.map((item)=>{
-                    return <li>{item}</li>
-                })
-            }
-        </ol>
+// return(
+//     <div>
+//         <ol>
+//             {
+//                 array.map((item)=>{
+//                     return <li>{item}</li>
+//                 })
+//             }
+//         </ol>
 
-    </div>
-);
+//     </div>
+// );
+
+
+// return (
+//     <div>
+
+//         <ol>
+//             {
+//                 array.map((item,i)=>{
+//                     return <li key={i.toString()}>{item}</li>
+//                 })
+//             }
+//         </ol>
+
+//     </div>
+// )
+
+
+// let loginStatusButton=(status)=>{
+//     if(status){
+//         return <button>Logout</button>
+//     }
+//     else{
+//         return <button>Login</button>
+//     }
+// }
+
+// return (
+//     <div>
+//         <h1>Login Status</h1>
+//         {loginStatusButton(true)}
+//     </div>
+// )
 
 
 
@@ -112,3 +144,5 @@ return(
 };
 
 export default App;
+
+

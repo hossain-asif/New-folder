@@ -28,3 +28,6 @@
     <label htmlFor="">first Name::</label>
     <input onChange={(e)=>{inputLoginData('fname',e.target.value)}} type="text" />
     <br />
+
+
+    
